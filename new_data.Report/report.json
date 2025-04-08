@@ -1,6 +1,13 @@
 {
-  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.62\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.62\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true,\"filterPaneHiddenInEditMode\":false},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
   "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ed1f96533230f90affac",
+      "config": "{}",
+      "name": "017dd6b4c22716894c1e"
+    }
+  ],
   "resourcePackages": [
     {
       "resourcePackage": {
@@ -19,7 +26,7 @@
   ],
   "sections": [
     {
-      "config": "{}",
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"244L\"}}}}}]}}",
       "displayName": "Page 1",
       "displayOption": 1,
       "filters": "[]",
@@ -27,13 +34,58 @@
       "name": "ed1f96533230f90affac",
       "visualContainers": [
         {
-          "config": "{\"name\":\"35ef91fc356ac8dceea8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":23.343465045592705,\"y\":79.75683890577508,\"z\":0,\"width\":464.9240121580547,\"height\":280.1215805471125,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sales.Total Sales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Sales\"},\"Name\":\"Sales.Total Sales\",\"NativeReferenceName\":\"Total Sales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Sales\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "config": "{\"name\":\"35ef91fc356ac8dceea8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":23.343465045592705,\"y\":79.75683890577508,\"z\":0,\"width\":178.96656534954408,\"height\":280.1215805471125,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sales.Total Sales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Sales\"},\"Name\":\"Sales.Total Sales\",\"NativeReferenceName\":\"Total Sales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Sales\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
           "filters": "[]",
           "height": 280.12,
-          "width": 464.92,
+          "width": 178.97,
           "x": 23.34,
           "y": 79.76,
           "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"37dcd64e5a1adaff5f09\",\"layouts\":[{\"id\":0,\"position\":{\"x\":853.9817629179332,\"y\":115.74468085106383,\"z\":3,\"width\":332.64437689969606,\"height\":280.1215805471125,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Sales.RegionID\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sales.Total Sales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"RegionID\"},\"Name\":\"Sales.RegionID\",\"NativeReferenceName\":\"RegionID\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Sales\"},\"Name\":\"Sales.Total Sales\",\"NativeReferenceName\":\"Total Sales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Sales\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.12,
+          "width": 332.64,
+          "x": 853.98,
+          "y": 115.74,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"4c1c396b84692a8f4e5d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":32.20125786163522,\"y\":445.78616352201254,\"z\":4,\"width\":293.8364779874214,\"height\":166.0377358490566,\"tabOrder\":4}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.ProductID\"},{\"queryRef\":\"Sum(Sales.SalesAmount)\"},{\"queryRef\":\"Sales.Total Sales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"ProductID\"},\"Name\":\"Sales.ProductID\",\"NativeReferenceName\":\"ProductID\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"SalesAmount\"}},\"Function\":0},\"Name\":\"Sum(Sales.SalesAmount)\",\"NativeReferenceName\":\"Sum of SalesAmount\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Sales\"},\"Name\":\"Sales.Total Sales\",\"NativeReferenceName\":\"Total Sales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"SalesAmount\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[{\"name\":\"703cf091f43b4fbd5625\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Sales\"}},\"Property\":\"ProductID\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"ProductID\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Sales\"}}}],\"Top\":5}}},\"Type\":2},{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"ProductID\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":0,\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true}]",
+          "height": 166.04,
+          "width": 293.84,
+          "x": 32.20,
+          "y": 445.79,
+          "z": 4.00
+        },
+        {
+          "config": "{\"name\":\"b60687183cbece5e1b0f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":457.8616352201258,\"y\":445.78616352201254,\"z\":5,\"width\":522.2641509433962,\"height\":254.59119496855345,\"tabOrder\":5}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(Sales.DateKey)\"},{\"queryRef\":\"Sales.Total Sales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"DateKey\"}},\"Function\":5},\"Name\":\"CountNonNull(Sales.DateKey)\",\"NativeReferenceName\":\"Count of DateKey\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Sales\"},\"Name\":\"Sales.Total Sales\",\"NativeReferenceName\":\"Total Sales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"DateKey\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 254.59,
+          "width": 522.26,
+          "x": 457.86,
+          "y": 445.79,
+          "z": 5.00
+        },
+        {
+          "config": "{\"name\":\"bc1f0ca8544a53fd8cfe\",\"layouts\":[{\"id\":0,\"position\":{\"x\":656.5349544072949,\"y\":103.10030395136779,\"z\":2,\"width\":178.96656534954408,\"height\":280.1215805471125,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sales.AOV\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"AOV\"},\"Name\":\"Sales.AOV\",\"NativeReferenceName\":\"AOV\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"AOV\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.12,
+          "width": 178.97,
+          "x": 656.53,
+          "y": 103.10,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"d4a1a7295bfff3b8c90b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":252.88753799392097,\"y\":86.56534954407296,\"z\":1,\"width\":252.88753799392097,\"height\":280.1215805471125,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sales.Total Units\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Units\"},\"Name\":\"Sales.Total Units\",\"NativeReferenceName\":\"Total Units\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Total Units\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.12,
+          "width": 252.89,
+          "x": 252.89,
+          "y": 86.57,
+          "z": 1.00
         }
       ],
       "width": 1280.00
