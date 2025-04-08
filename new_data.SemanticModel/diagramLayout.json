@@ -1,0 +1,87 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 278
+          },
+          "nodeIndex": "Region",
+          "nodeLineageTag": "f4e871dc-3a7c-4d2d-88fc-94a557a7721b",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 0
+          },
+          "nodeIndex": "Sales",
+          "nodeLineageTag": "32280cb8-94ca-4e85-bec7-e547ce49c5c2",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 668,
+            "y": 416
+          },
+          "nodeIndex": "SalesRep",
+          "nodeLineageTag": "a57974e2-7dfe-43bf-a8a8-37e598700ba0",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 867,
+            "y": 0
+          },
+          "nodeIndex": "Customer",
+          "nodeLineageTag": "8e97fceb-63fa-48d3-a20d-1cf67e99d02f",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 359,
+            "y": 423
+          },
+          "nodeIndex": "Product",
+          "nodeLineageTag": "e9645294-c3af-4d73-97c3-13e23314026f",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
