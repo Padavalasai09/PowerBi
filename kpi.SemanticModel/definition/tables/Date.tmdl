@@ -1,0 +1,119 @@
+table Date
+	lineageTag: 544c8c45-a0e2-4ffe-a1e1-6e7971b056e5
+
+	column Date
+		formatString: General Date
+		lineageTag: 8c0e2459-5714-40d6-b2ac-86b45147db25
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: c9a0ed91-254e-4596-b24f-5e7270cfbbbb
+			defaultHierarchy: LocalDateTable_4e6ee1ba-bf36-4f9c-9d82-035bf9df1cbe.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		formatString: 0
+		lineageTag: 32b56221-8b85-46a1-aba7-0ad2dd85ecc9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DateKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 6d0ee287-edb8-4cba-850d-8c8b657c0636
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: 73ecb69b-752c-41da-b2b0-9dbdd4bdc486
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNo
+		formatString: 0
+		lineageTag: 3071d3e5-1c3c-4779-ab81-e72ebba58b2e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MonthNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: 4fda74fe-3aa8-48cb-8050-ade2f41fec64
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearQuarter
+		lineageTag: de24f00e-cbdf-4a69-8936-3e5a275bc48a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearQuarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		lineageTag: 892cc7ef-688e-4817-abb7-a1d584460f14
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		lineageTag: 8f034127-97fa-4dc6-b37b-ab3ae87ff22b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DayOfWeek]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekShort
+		lineageTag: 65f02115-a5fb-41c1-a104-3a6abf58a905
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DayOfWeekShort]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				
+				VAR MinDateKey = MIN(Sales[DateKey])
+				VAR MaxDateKey = MAX(Sales[DateKey])
+				// Convert DateKey (YYYYMMDD) to date format
+				VAR MinDate = DATE(INT(MinDateKey/10000), INT(MOD(MinDateKey,10000)/100), MOD(MinDateKey,100))
+				VAR MaxDate = DATE(INT(MaxDateKey/10000), INT(MOD(MaxDateKey,10000)/100), MOD(MaxDateKey,100))
+				RETURN
+				ADDCOLUMNS(
+				    CALENDAR(MinDate, MaxDate),
+				    // Recreate DateKey for relationship
+				    "DateKey", YEAR([Date]) * 10000 + MONTH([Date]) * 100 + DAY([Date]),
+				    // Hierarchical columns
+				    "Year", YEAR([Date]),
+				    "Quarter", "Q" & QUARTER([Date]),
+				    "MonthNo", MONTH([Date]),
+				    "Month", FORMAT([Date], "MMMM"),
+				    "YearQuarter", FORMAT([Date], "YYYY") & " Q" & QUARTER([Date]),
+				    "YearMonth", FORMAT([Date], "YYYY-MM"),
+				    "DayOfWeek", FORMAT([Date], "dddd"),
+				    "DayOfWeekShort", FORMAT([Date], "ddd")
+				)
+
+	annotation PBI_Id = 4083623652bb4dfb996254f49cc093f6
+

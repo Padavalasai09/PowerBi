@@ -1,0 +1,100 @@
+table Sales
+	lineageTag: d54e85d6-f9d4-4718-8522-674a511e690d
+
+	measure 'Total Sales' = SUM(Sales[SalesAmount])
+		formatString: 0
+		lineageTag: a0359947-76fb-4cfc-83af-ee7ada2c5845
+
+	measure 'Total Units Sold' = SUM(Sales[Quantity])
+		formatString: 0
+		lineageTag: 8c5d4908-c64d-4f71-9478-efd616c9451f
+
+	measure 'Average Order Value' = DIVIDE([Total Sales], DISTINCTCOUNT(Sales[OrderID]), 0)
+		lineageTag: 11c9d6ee-a3dd-4349-82e0-4745d8960be5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: dbc931c7-72d6-4ee1-882f-81504f903876
+		summarizeBy: count
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b4bf79ba-ae52-4ef9-8aae-159ad944371f
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: ea066a72-5272-4f3c-9b76-89ec51536f50
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6940c90f-13d2-4998-8720-1a99baf752c7
+		summarizeBy: none
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionID
+		dataType: int64
+		formatString: 0
+		lineageTag: 12635fde-1e6c-4efd-b763-0656a43a5721
+		summarizeBy: none
+		sourceColumn: RegionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesRepID
+		dataType: int64
+		formatString: 0
+		lineageTag: ac99c2eb-d470-48bd-86b6-d0c7f26f9d02
+		summarizeBy: none
+		sourceColumn: SalesRepID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 6bb7451a-48b6-4416-8346-bf7d4eb207f7
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesAmount
+		dataType: int64
+		formatString: 0
+		lineageTag: 2510c790-7d7e-4160-8f2b-f1f5b086d196
+		summarizeBy: sum
+		sourceColumn: SalesAmount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\NerellaManojKumar\Downloads\OrderDetails_Data\OrderDetails_Data\Sales.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"OrderID", Int64.Type}, {"DateKey", Int64.Type}, {"CustomerID", Int64.Type}, {"ProductID", Int64.Type}, {"RegionID", Int64.Type}, {"SalesRepID", Int64.Type}, {"Quantity", Int64.Type}, {"SalesAmount", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
